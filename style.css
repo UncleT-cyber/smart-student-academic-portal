@@ -828,3 +828,22 @@ display:block;
     flex-direction: column;
     justify-content: space-between;
 }
+
+body.dark-mode .summary-card {
+    background: #1e293b;
+    color: #e2e8f0;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .summary-card h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .summary-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
