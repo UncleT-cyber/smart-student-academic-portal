@@ -508,6 +508,17 @@ table {
     min-width: 600px; /* keeps structure intact */
 }
 
+table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
 @media (max-width: 768px) {
     table {
         font-size: 13px;
@@ -916,4 +927,10 @@ body.dark-mode .summary-card:hover {
 .card-container .card:hover {
     transform: translateY(-6px) scale(1.02);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+table {
+    width: 100%;
+    min-width: 600px; /* prevents squashing on desktop */
+    border-collapse: collapse;
 }
