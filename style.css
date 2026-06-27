@@ -859,3 +859,61 @@ body.dark-mode .summary-card:hover {
     color: #2563eb;
     font-size: 20px;
 }
+
+.dark-mode .about-hero {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+.dark-mode .about-hero p,
+.dark-mode .about-hero h1,
+.dark-mode .about-hero h2 {
+    color: #e2e8f0;
+}
+
+.dark-mode .about-hero span {
+    color: #cbd5e1;
+}
+
+/* ===================== */
+/* COURSE DASHBOARD CARDS FIX */
+/* ===================== */
+
+.card-container .card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.card-container .card h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #2563eb;
+}
+
+.card-container .card p {
+    margin: 0;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.dark-mode .card-container .card {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+.dark-mode .card-container .card p {
+    color: #cbd5e1;
+}
+
+.dark-mode .card-container .card h3 {
+    color: #60a5fa;
+}
+
+.card-container .card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
