@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Smart Student Academic Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+Smart Student Academic Portal
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="courses.html">Courses</a></li>
+
+<li><a href="planner.html">Planner</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="events.html">Events</a></li>
+
+<li><a href="appointments.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<marquee>
+
+Upcoming Events: Department Orientation | CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
+
+</marquee>
+
+<button id="darkModeBtn" onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+
+<main class="container">
+
+<h1>Contact Me</h1>
+
+<p>
+
+Send inquiries, ask questions or request academic assistance.
+
+</p>
+
+<br>
+
+<div class="hero">
+
+<div class="hero-image">
+
+<img src="images/contact.png" alt="Contact">
+
+</div>
+
+<div class="hero-text">
+
+<h2>Get In Touch</h2>
+
+<p>
+
+Students can submit inquiries regarding courses, projects, academic support and other activities.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<form id="contactForm">
+
+<input id="fullName" type="text" placeholder="Enter your full name" required>
+<input id="email" type="email" placeholder="youremail@miva.edu.ng" required>
+<input id="phone" type="tel" inputmode="numeric"
+placeholder="+234 800 000 0000"
+pattern="^\+?[0-9]{7,15}$"
+required>
+
+<select id="purpose" required>
+    <option value="">Select an option</option>
+    <option>Academic Inquiry</option>
+    <option>Course Registration</option>
+    <option>Project Discussion</option>
+    <option>General Support</option>
+</select>
+
+<textarea id="message" rows="5" placeholder="Type your message" required></textarea>
+
+<button type="button" onclick="bookAppointment()">
+    Submit
+</button>
+
+</form>
+
+<h3 id="appointmentMessage"></h3>
+
+<br>
+
+<div class="card">
+
+</div>
+<div id="toast" class="toast"></div>
+</main>
+
+
+<footer>
+
+<p>Smart Student Academic Portal</p>
+
+<p>Designed by Anthony Abah | Cybersecurity Student</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

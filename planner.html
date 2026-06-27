@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic Planner | Smart Student Academic Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+Smart Student Academic Portal
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="courses.html">Courses</a></li>
+
+<li><a href="planner.html">Planner</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="events.html">Events</a></li>
+
+<li><a href="appointments.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<marquee>
+
+Upcoming Events: CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop | Guest Lecture
+
+</marquee>
+<button id="darkModeBtn" onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+
+<main class="container">
+
+    <h1>Academic Planner</h1>
+    <p>Organise your studies, assignments, goals, and weekly academic activities.</p>
+
+    <!-- HERO -->
+    <section class="content-block">
+
+        <div class="hero">
+
+            <div class="hero-image">
+                <img src="images/study-planner.png" alt="Study Planner">
+            </div>
+
+            <div class="hero-text">
+                <h2>Study Dashboard</h2>
+                <p>
+                    This planner helps manage my academic workload, improve productivity, and track weekly goals.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAIN PLANNER GRID -->
+<section class="card-container">
+
+    <!-- TASK MANAGER -->
+    <div class="card">
+
+    <h3>📝 Tasks Manager</h3>
+
+    <input type="text" id="newTask" placeholder="Enter a new task">
+
+    <select id="taskPriority">
+        <option value="low">💤 Low Priority</option>
+        <option value="medium">⚡ Medium Priority</option>
+        <option value="high">🔥 High Priority</option>
+    </select>
+
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+</div>
+
+    <!-- STUDY PROGRESS (ONLY ONE VERSION) -->
+    <div class="card">
+
+        <h3>📊 Study Progress</h3>
+
+        <p id="progressText">0% Completed</p>
+
+        <progress id="progressBar" value="0" max="100"></progress>
+
+        <p>Automatically updates based on completed tasks.</p>
+
+    </div>
+
+    <!-- ACADEMIC GOALS -->
+    <div class="card">
+
+        <h3>🎯 Academic Goals</h3>
+
+        <ul>
+            <li>Improve HTML & CSS skills</li>
+            <li>Practice JavaScript daily</li>
+            <li>Stay consistent with coursework</li>
+            <li>Submit assignments early</li>
+        </ul>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<p>© 2026 Smart Student Academic Portal</p>
+
+<p>Designed by Anthony Abah | Cybersecurity Student</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Smart Student Academic Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+Smart Student Academic Portal
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="courses.html">Courses</a></li>
+
+<li><a href="planner.html">Planner</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="events.html">Events</a></li>
+
+<li><a href="appointments.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<marquee>
+
+Upcoming Events: CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
+
+</marquee>
+<button id="darkModeBtn" onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+
+<main class="container">
+
+<h1>My Projects</h1>
+
+<p>
+
+This page showcases some of my academic and technology projects.
+
+</p>
+
+<section class="card-container">
+
+<div class="card">
+
+<h3>Student Academic Portal</h3>
+
+<p>
+
+A responsive portal developed with HTML, CSS and JavaScript to help students manage academic activities.
+
+</p>
+
+<p>
+
+Status:
+
+<span id="project1Status">
+
+In Progress
+
+</span>
+
+</p>
+
+<button onclick="updateProjectStatus('project1Status')">
+
+Update Status
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Personal Portfolio Website</h3>
+
+<p>
+
+A personal website created to showcase skills, goals and achievements.
+
+</p>
+
+<p>
+
+Status:
+
+<span id="project2Status">
+
+Completed
+
+</span>
+
+</p>
+
+<button onclick="updateProjectStatus('project2Status')">
+
+Update Status
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Cybersecurity Awareness Campaign</h3>
+
+<p>
+
+A project focused on educating students about safe online practices.
+
+</p>
+
+<p>
+
+Status:
+
+<span id="project3Status">
+
+Pending
+
+</span>
+
+</p>
+
+<button onclick="updateProjectStatus('project3Status')">
+
+Update Status
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<p>Smart Student Academic Portal</p>
+
+<p>Designed by Anthony Abah | Cybersecurity Student</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

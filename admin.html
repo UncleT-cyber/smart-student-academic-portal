@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Inbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Messages Dashboard</h1>
+
+<div id="messages"></div>
+
+<script>
+function loadMessages() {
+
+let inbox = JSON.parse(localStorage.getItem("messages")) || [];
+
+let container = document.getElementById("messages");
+
+if (inbox.length === 0) {
+    container.innerHTML = "<p>No messages yet.</p>";
+    return;
+}
+
+container.innerHTML = inbox.map((msg, index) => `
+    <div class="card">
+        <h3>${msg.name}</h3>
+        <p><strong>Email:</strong> ${msg.email}</p>
+        <p><strong>Phone:</strong> ${msg.phone}</p>
+        <p><strong>Purpose:</strong> ${msg.purpose}</p>
+        <p><strong>Message:</strong> ${msg.message}</p>
+        <p><small>${msg.time}</small></p>
+    </div>
+`).join("");
+
+}
+
+loadMessages();
+</script>
+
+</body>
+</html>

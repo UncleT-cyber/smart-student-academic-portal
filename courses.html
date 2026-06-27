@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Management | Smart Student Academic Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+Smart Student Academic Portal
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="courses.html">Courses</a></li>
+
+<li><a href="planner.html">Planner</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="events.html">Events</a></li>
+
+<li><a href="appointments.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<marquee>
+
+Upcoming Events: CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
+
+</marquee>
+<button id="darkModeBtn" onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+
+<main class="container">
+
+    <h1>Course Management</h1>
+    <p>View and track your registered semester courses and academic progress.</p>
+
+    <!-- HERO SECTION -->
+    <section class="content-block">
+
+        <div class="hero">
+            <div class="hero-image">
+                <img src="images/online-learning.png" alt="Online Learning Platform">
+            </div>
+
+            <div class="hero-text">
+                <h2>Semester Overview</h2>
+                <p>
+                    This dashboard shows all registered courses, categories, and your current progress in each subject.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- COURSE SUMMARY CARDS -->
+    <section class="card-container">
+
+        <div class="card">
+            <h3>8</h3>
+            <p>Registered Courses</p>
+        </div>
+
+        <div class="card">
+            <h3>6</h3>
+            <p>School of Computing</p>
+        </div>
+
+        <div class="card">
+            <h3>2</h3>
+            <p>General Studies</p>
+        </div>
+
+        <div class="card">
+            <h3>33%</h3>
+            <p>Highest Progress</p>
+        </div>
+
+    </section>
+
+    <!-- COURSE TABLE SECTION -->
+    <section class="content-block">
+
+        <h2>My Courses</h2>
+
+        <table>
+
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Category</th>
+                <th>Progress</th>
+            </tr>
+
+            <tr>
+                <td>COS 102</td>
+                <td>Problem Solving</td>
+                <td>School of Computing</td>
+                <td>0%</td>
+            </tr>
+
+            <tr>
+                <td>CSC 106</td>
+                <td>Introduction to Web Technologies</td>
+                <td>School of Computing</td>
+                <td>2%</td>
+            </tr>
+
+            <tr>
+                <td>GST 112</td>
+                <td>Nigerian Peoples and Culture</td>
+                <td>General Studies</td>
+                <td>0%</td>
+            </tr>
+
+            <tr>
+                <td>GST 122</td>
+                <td>Communication Skills II</td>
+                <td>General Studies</td>
+                <td>0%</td>
+            </tr>
+
+            <tr>
+                <td>MIVA-COS 111</td>
+                <td>Technical Certification in Computing I</td>
+                <td>School of Computing</td>
+                <td>33%</td>
+            </tr>
+
+            <tr>
+                <td>MTH 102</td>
+                <td>Elementary Mathematics II</td>
+                <td>School of Computing</td>
+                <td>2%</td>
+            </tr>
+
+            <tr>
+                <td>PHY 102</td>
+                <td>General Physics II</td>
+                <td>School of Computing</td>
+                <td>1%</td>
+            </tr>
+
+            <tr>
+                <td>PHY 108</td>
+                <td>Physics Practical II</td>
+                <td>School of Computing</td>
+                <td>1%</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+</main>
+
+<footer>
+
+<p>
+
+Smart Student Academic Portal
+
+</p>
+
+<p>
+
+Designed by Anthony Abah | Cybersecurity Student
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
