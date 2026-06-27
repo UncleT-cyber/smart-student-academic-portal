@@ -847,3 +847,15 @@ body.dark-mode .summary-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.logo i {
+    color: #2563eb;
+    font-size: 20px;
+}
