@@ -347,3 +347,80 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // runs once only
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+// apply observer
+cards.forEach(card => {
+    observer.observe(card);
+});
+
+window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+        loader.classList.add("hide");
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+    }
+});
+
+// =====================
+// BACK TO TOP BUTTON
+// =====================
+
+let topBtn = document.getElementById("topBtn");
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    let topBtn = document.getElementById("topBtn");
+
+    if (!topBtn) return;
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 100) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+
+    });
+
+    window.scrollToTop = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const links = document.querySelectorAll("nav ul li a");
+
+    let currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+
+    });
+
+});

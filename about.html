@@ -23,6 +23,10 @@
 
 <body>
 
+    <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Smart Portal...</p>
+</div>
 <header>
 
 <nav>
@@ -42,9 +46,11 @@ Smart Student Academic Portal
 </ul>
 </nav>
 
-<marquee>
-Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop | Guest Lecture
-</marquee>
+<div class="marquee-wrapper">
+    <marquee>
+        Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop | Guest Lecture
+    </marquee>
+</div>
 
 <button id="darkModeBtn" onclick="toggleDarkMode()">
 🌙 Dark Mode
@@ -156,6 +162,6 @@ solving technical problems, and exploring cloud systems.
 
 
 <script src="script.js"></script>
-
+<button id="topBtn" onclick="scrollToTop()">↑ Top</button>
 </body>
 </html>

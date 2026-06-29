@@ -20,6 +20,10 @@
 </head>
 
 <body>
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Smart Portal...</p>
+</div>
 
 <header>
 
@@ -40,9 +44,11 @@ Smart Student Academic Portal
 </ul>
 </nav>
 
-<marquee>
-Upcoming Events: CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
-</marquee>
+<div class="marquee-wrapper">
+    <marquee>
+        Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop | Guest Lecture
+    </marquee>
+</div>
 
 <button id="darkModeBtn" onclick="toggleDarkMode()">
 🌙 Dark Mode
@@ -122,6 +128,6 @@ A collection of academic, web development, and cybersecurity projects built duri
 </footer>
 
 <script src="script.js"></script>
-
+<button id="topBtn" onclick="scrollToTop()">↑ Top</button>
 </body>
 </html>

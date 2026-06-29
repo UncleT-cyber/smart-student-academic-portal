@@ -20,6 +20,10 @@
 </head>
 
 <body>
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Smart Portal...</p>
+</div>
 
 <!-- HEADER -->
 <header>
@@ -41,9 +45,11 @@ Smart Student Academic Portal
     </ul>
 </nav>
 
-<marquee>
-Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop | Guest Lecture
-</marquee>
+<div class="marquee-wrapper">
+    <marquee>
+        Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop | Guest Lecture
+    </marquee>
+</div>
 
 <button id="darkModeBtn" onclick="toggleDarkMode()">
 🌙 Dark Mode
@@ -63,7 +69,7 @@ Upcoming Events: Cybersecurity Seminar | HTML Lab Assessment | Student Workshop 
 
     <h2>Anthony Abah</h2>
 
-    <p>B.Sc. Cybersecurity Student | MIVA Open University</p>
+    <p>Cybersecurity Student | MIVA Open University</p>
 
     <p>
         This portal showcases my academic journey, projects, study planner, courses and student activities while demonstrating my HTML, CSS and JavaScript skills.
@@ -171,6 +177,6 @@ allowfullscreen>
 </footer>
 
 <script src="script.js"></script>
-
+<button id="topBtn" onclick="scrollToTop()">↑ Top</button>
 </body>
 </html>
