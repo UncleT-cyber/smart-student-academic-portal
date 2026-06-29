@@ -1095,3 +1095,6 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    padding-top: 110px; /* nav (60px) + marquee (~50px) */
+}
