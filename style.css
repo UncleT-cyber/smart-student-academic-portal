@@ -499,20 +499,20 @@ font-weight:600;
         padding: 20px;
     }
 
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+        height: auto; /* Let the height adapt dynamically to the content */
+    }
+
     nav ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
-        margin-top: 15px;
+        margin-top: 10px; /* Brings links up tighter to the logo title */
     }
-    nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-
-    height: 180px;
-}
     .hero {
         flex-direction: column;
         text-align: center;
@@ -537,7 +537,17 @@ body {
 
 header marquee {
     display: block;
-    margin-top: 100px;
+    margin-top: 50px;
+}
+
+/* ================================================== */
+/* DESKTOP-ONLY MARQUEE ADJUSTMENT                     */
+/* ================================================== */
+@media (min-width: 769px) {
+    header marquee {
+        display: block !important;
+        margin-top: 0px !important; /* Adjust this number to nudge it up or down on desktop */
+    }
 }
 
 table {
@@ -1105,3 +1115,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 1. Target any button containing the text "Mode" or "light" */
+button[id*="mode" i], 
+button[class*="mode" i],
+button[onclick*="Mode" i] {
+    margin-top: 5px !important; 
+    margin-bottom: 0px !important;
+}
+
+/* 2. Alternative backup: Push the entire top of your hero section down from the marquee */
+.hero-home, .about-hero, .projects-hero {
+    margin-top: 5px !important;
+}
