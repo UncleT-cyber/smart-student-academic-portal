@@ -1,3 +1,21 @@
+/* ================================================== */
+/* REMOVE TOP SAGGING SPACE             */
+/* ================================================== */
+
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+header, 
+header h1, 
+header .logo,
+header nav {
+    margin-top: 0 !important;
+}
+
 /* ===================== */
 /* RESET */
 /* ===================== */
@@ -259,7 +277,7 @@ button:hover {
     transform: translateY(0);
 }
 
-/* Optional: smoother hover (keep your existing one too) */
+/* Smoth Hover */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.12);
@@ -483,9 +501,6 @@ button{
 font-weight:600;
 
 }
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
 
 /* ===================== */
 /* RESPONSIVE */
@@ -503,7 +518,7 @@ font-weight:600;
         flex-direction: column;
         align-items: center;
         padding: 15px 20px;
-        height: auto; /* Let the height adapt dynamically to the content */
+        height: auto; 
     }
 
     nav ul {
@@ -511,7 +526,7 @@ font-weight:600;
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
-        margin-top: 10px; /* Brings links up tighter to the logo title */
+        margin-top: 10px; 
     }
     .hero {
         flex-direction: column;
@@ -546,9 +561,9 @@ header marquee {
 @media (min-width: 769px) {
     header marquee {
         display: block !important;
-        margin: 0 !important;          /* Resets all default browser margins */
-        margin-top: -15px !important;  /* Negative margin pulls it up higher! */
-        padding: 10px !important;      /* Keeps the inside spacing neat */
+        margin: 0 !important;          
+        margin-top: -15px !important;  
+        padding: 10px !important;      
     }
 }
 
@@ -996,12 +1011,12 @@ body.dark-mode .summary-card:hover {
 
 table {
     width: 100%;
-    min-width: 600px; /* prevents squashing on desktop */
+    min-width: 600px; 
     border-collapse: collapse;
 }
 
 body {
-    padding-top: 75px; /* adjust depending on nav height */
+    padding-top: 75px; 
 }
 
 /* ===================== */
@@ -1117,7 +1132,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 1. Target any button containing the text "Mode" or "light" */
+/* Button */
 button[id*="mode" i], 
 button[class*="mode" i],
 button[onclick*="Mode" i] {
@@ -1125,7 +1140,7 @@ button[onclick*="Mode" i] {
     margin-bottom: 0px !important;
 }
 
-/* 2. Alternative backup: Push the entire top of your hero section down from the marquee */
+/* Hero backup */
 .hero-home, .about-hero, .projects-hero {
     margin-top: 5px !important;
 }
@@ -1136,14 +1151,134 @@ button[onclick*="Mode" i] {
 button[id*="mode" i],
 button[class*="mode" i],
 button[onclick*="Mode" i] {
-    background-color: #2563EB !important; /* Locks background to Blue */
-    color: #ffffff !important;            /* Locks text to White */
-    border: 1px solid #1d4ed8 !important; /* Sharp, clean border */
+    background-color: #2563EB !important; 
+    color: #ffffff !important;            
+    border: 1px solid #1d4ed8 !important; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover state that works perfectly in both light and dark modes */
+/* Hover state */
 button[id*="mode" i]:hover,
 button[class*="mode" i]:hover {
-    background-color: #1d4ed8 !important; /* Deepens slightly on hover */
+    background-color: #1d4ed8 !important; 
+}
+
+/* ================================================== */
+/* PLANNER / TASK LIST TEXT VISIBILITY FIX            */
+/* ================================================== */
+
+#taskList li {
+    background: #ffffff !important; 
+    color: #0A192F !important;      
+    font-weight: 500 !important;
+    border: 1px solid #cbd5e1 !important; 
+}
+
+body.dark-mode #taskList li {
+    background: #2a2a2a !important; 
+    color: #ffffff !important;      
+    border: 1px solid #444444 !important;
+}
+
+/* ================================================== */
+/* SCROLL-DRIVEN BOUNCE EFFECT                        */
+/* ================================================== */
+
+.card-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-animate.reveal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ================================================== */
+/* STICKY HEADER FIXED RE-LAYOUT (NO OVERLAPS)        */
+/* ================================================== */
+
+header {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important; 
+    background: #0A192F !important; 
+    display: flex !important;
+    flex-direction: column !important; 
+    width: 100% !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+header marquee {
+    order: -1 !important; 
+    background: #2563eb !important;
+    color: white !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    position: relative !important; 
+    z-index: auto !important;
+}
+
+header h1, header h2, header .logo, header nav {
+    position: relative !important;
+    z-index: auto !important;
+}
+
+header button#darkModeBtn {
+    align-self: flex-start !important;
+    margin: 12px 0 12px 0 !important; 
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+    display: inline-block !important;
+}
+
+
+@media (max-width: 768px) {
+    header button#darkModeBtn {
+        margin: 10px 0 14px 16px !important; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    header button#darkModeBtn {
+        margin: 10px 0 14px 0 !important; 
+    }
+}
+
+/* ================================================== */
+/* DESKTOP YOUTUBE VIDEO OPTIMIZATION                 */
+/* ================================================== */
+
+header + main iframe, 
+.container iframe,
+video, 
+iframe[src*="youtube.com"] {
+    display: block !important;
+    max-width: 850px !important; 
+    width: 90% !important; 
+    height: 480px !important; 
+    margin: 30px auto !important; 
+    border-radius: 12px !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; 
+}
+
+@media (max-width: 768px) {
+    header + main iframe, 
+    .container iframe,
+    video, 
+    iframe[src*="youtube.com"] {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important; 
+        margin: 15px 0 !important;
+        border-radius: 8px !important;
+    }
 }

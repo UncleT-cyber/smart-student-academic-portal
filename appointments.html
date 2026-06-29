@@ -59,17 +59,14 @@ Smart Student Academic Portal
 
 </nav>
 
-<marquee>
-
-Upcoming Events: Department Orientation | CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
-
-</marquee>
-
-<button id="darkModeBtn" onclick="toggleDarkMode()">
-
-🌙 Dark Mode
-
-</button>
+<div class="sticky-bar">
+        <marquee>
+            Upcoming Events: Department Orientation | CSC106 Lab Assessment | Cybersecurity Awareness Seminar | Student Innovation Workshop
+        </marquee>
+        <button id="darkModeBtn" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
+    </div>
 
 </header>
 
@@ -149,12 +146,55 @@ required>
 
 <p>Smart Student Academic Portal</p>
 
-<p>Designed by Anthony Abah | Cybersecurity Student</p>
+<p>created by Anthony Abah | Cybersecurity Student</p>
 
 </footer>
 
 <script src="script.js"></script>
 <button id="topBtn" onclick="scrollToTop()">↑ Top</button>
+<script>
+function bookAppointment() {
+    // 1. Grab values from my actual HTML IDs
+    let nameField = document.getElementById("fullName");
+    let emailField = document.getElementById("email");
+    let phoneField = document.getElementById("phone");
+    let purposeField = document.getElementById("purpose");
+    let messageField = document.getElementById("message");
+
+    // Check if the form is completely filled out before saving
+    if (!nameField.value || !emailField.value || !phoneField.value || !purposeField.value || !messageField.value) {
+        alert("Please fill in all fields before submitting.");
+        return;
+    }
+
+    // 2. Build the message object to match my Inbox mapping structure
+    let newMsg = {
+        name: nameField.value,
+        email: emailField.value,
+        phone: phoneField.value,
+        purpose: purposeField.value,
+        message: messageField.value,
+        time: new Date().toLocaleString()
+    };
+
+    // 3. Pull existing messages array, push the new data, and save back to localStorage
+    let inbox = JSON.parse(localStorage.getItem("messages")) || [];
+    inbox.push(newMsg);
+    localStorage.setItem("messages", JSON.stringify(inbox));
+
+    // 4. Provide visual feedback and clear the form inputs
+    let outputMessage = document.getElementById("appointmentMessage");
+    if (outputMessage) {
+        outputMessage.innerText = "🎉 Message recorded successfully and sent to Admin Inbox!";
+        outputMessage.style.color = "#10b981"; 
+    } else {
+        alert("Message recorded successfully!");
+    }
+
+    
+    document.getElementById("contactForm").reset();
+}
+</script>
 </body>
 
 </html>

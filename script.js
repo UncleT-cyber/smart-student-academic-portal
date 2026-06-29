@@ -138,7 +138,7 @@ updateClock();
 
 
 // =====================
-// PLANNER SYSTEM (CLEAN SINGLE VERSION)
+// PLANNER SYSTEM 
 // =====================
 
 let tasks = [];
@@ -423,4 +423,35 @@ window.addEventListener("DOMContentLoaded", function () {
 
     });
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+// This targets .stat-card, .dash-card, .content-block, AND any class name that contains the word "hero"
+// The ultimate master list — completely covers every single page!
+const cards = document.querySelectorAll(".card, .hero-image, .stat-card, .dash-card, .content-block, .summary-card, [class*='hero']");
+
+    
+    cards.forEach(card => {
+        card.classList.add("card-animate");
+    });
+
+    const observerOptions = {
+        root: null, 
+        threshold: 0.15 
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                
+                entry.target.classList.add("reveal");
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        scrollObserver.observe(card);
+    });
 });

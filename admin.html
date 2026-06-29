@@ -7,40 +7,81 @@
 </head>
 <body>
 
-    <div id="loader">
+<div id="loader">
     <div class="spinner"></div>
-    <p>Loading Smart Portal...</p>
+    <p>Loading Admin Dashboard...</p>
 </div>
-<h1>Messages Dashboard</h1>
 
-<div id="messages"></div>
+<header style="background: #0A192F; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <div class="logo" style="display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px;">
+        <i class="fa-solid fa-graduation-cap" style="color: #2563eb; font-size: 22px;"></i>
+        Smart Student Academic Portal <span style="background: #2563eb; font-size: 11px; padding: 3px 8px; border-radius: 20px; margin-left: 5px;">Admin Inbox</span>
+    </div>
+    <a href="index.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s;"><i class="fa-solid fa-arrow-left"></i> Exit Dashboard</a>
+</header>
+
+<main class="container" style="padding-top: 40px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px;">
+        <div>
+            <h1 style="margin: 0; color: #0A192F;">Messages Dashboard</h1>
+            <p style="color: #64748b; margin-top: 5px;">Review incoming portal submissions and inquiries here.</p>
+        </div>
+        <button onclick="clearInbox()" style="background: #dc2626; color: white; padding: 8px 14px; font-size: 13px; font-weight: 600; border-radius: 6px; border: none; cursor: pointer;">
+            <i class="fa-solid fa-trash-can"></i> Clear All Logs
+        </button>
+    </div>
+
+    <div id="messages"></div>
+</main>
 
 <script>
 function loadMessages() {
+    let inbox = JSON.parse(localStorage.getItem("messages")) || [];
+    let container = document.getElementById("messages");
 
-let inbox = JSON.parse(localStorage.getItem("messages")) || [];
+    if (!container) return;
 
-let container = document.getElementById("messages");
+    if (inbox.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <i class="fa-solid fa-envelope-open" style="font-size: 48px; color: #cbd5e1; margin-bottom: 15px;"></i>
+                <p style="color: #64748b; font-size: 16px; margin: 0;">Your inbox is completely clear! No messages yet.</p>
+            </div>`;
+        return;
+    }
 
-if (inbox.length === 0) {
-    container.innerHTML = "<p>No messages yet.</p>";
-    return;
+    // Maps out messages into stunning card formats with crisp spacing
+    container.innerHTML = inbox.map((msg, index) => `
+        <div class="card" style="opacity: 1; transform: none; display: block; background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; border-left: 5px solid #2563eb;">
+            <h3 style="color: #0A192F; margin-bottom: 15px; font-size: 20px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-circle-user" style="color: #2563eb;"></i> ${msg.name}</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 15px; background: #f8fafc; padding: 12px; border-radius: 8px; font-size: 14px;">
+                <p style="margin: 0; color: #334155;"><strong><i class="fa-solid fa-envelope" style="width: 16px;"></i> Email:</strong> ${msg.email}</p>
+                <p style="margin: 0; color: #334155;"><strong><i class="fa-solid fa-phone" style="width: 16px;"></i> Phone:</strong> ${msg.phone}</p>
+                <p style="margin: 0; color: #334155;"><strong><i class="fa-solid fa-circle-info" style="width: 16px;"></i> Purpose:</strong> ${msg.purpose}</p>
+            </div>
+            <p style="color: #1e293b; background: #ffffff; padding: 10px 0; font-size: 15px; border-top: 1px dashed #e2e8f0; margin-bottom: 15px;"><strong>Message:</strong><br>${msg.message}</p>
+            <p style="margin: 0; text-align: right;"><small style="color: #94a3b8; font-size: 12px;"><i class="fa-solid fa-clock"></i> Received: ${msg.time}</small></p>
+        </div>
+    `).join("");
 }
 
-container.innerHTML = inbox.map((msg, index) => `
-    <div class="card">
-        <h3>${msg.name}</h3>
-        <p><strong>Email:</strong> ${msg.email}</p>
-        <p><strong>Phone:</strong> ${msg.phone}</p>
-        <p><strong>Purpose:</strong> ${msg.purpose}</p>
-        <p><strong>Message:</strong> ${msg.message}</p>
-        <p><small>${msg.time}</small></p>
-    </div>
-`).join("");
-
+// Clear Inbox utility method feature
+function clearInbox() {
+    if (confirm("Are you sure you want to permanently clear all inbox data records? This step cannot be undone.")) {
+        localStorage.removeItem("messages");
+        loadMessages();
+    }
 }
 
-loadMessages();
+window.addEventListener("DOMContentLoaded", () => {
+    let loader = document.getElementById("loader");
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add("hide");
+        }, 400);
+    }
+    loadMessages();
+});
 </script>
 
 </body>
