@@ -1129,3 +1129,21 @@ button[onclick*="Mode" i] {
 .hero-home, .about-hero, .projects-hero {
     margin-top: 5px !important;
 }
+
+/* ================================================== */
+/* PERMANENT BLUE TOGGLE BUTTON FIX                   */
+/* ================================================== */
+button[id*="mode" i],
+button[class*="mode" i],
+button[onclick*="Mode" i] {
+    background-color: #2563EB !important; /* Locks background to Blue */
+    color: #ffffff !important;            /* Locks text to White */
+    border: 1px solid #1d4ed8 !important; /* Sharp, clean border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover state that works perfectly in both light and dark modes */
+button[id*="mode" i]:hover,
+button[class*="mode" i]:hover {
+    background-color: #1d4ed8 !important; /* Deepens slightly on hover */
+}
