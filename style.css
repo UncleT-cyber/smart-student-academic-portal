@@ -1090,19 +1090,3 @@ html {
     scroll-behavior: smooth;
 }
 
-.marquee-wrapper {
-    position: sticky;
-    top: 70px;
-    z-index: 999;
-    background: #2563EB;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    z-index: 1100;
-}
