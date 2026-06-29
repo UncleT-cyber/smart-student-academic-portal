@@ -525,6 +525,10 @@ font-weight:600;
     }
 }
 
+body {
+    padding-top: 190px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -974,7 +978,7 @@ table {
 }
 
 body {
-    padding-top: 70px; /* adjust depending on nav height */
+    padding-top: 75px; /* adjust depending on nav height */
 }
 
 /* ===================== */
