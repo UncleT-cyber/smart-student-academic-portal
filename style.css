@@ -546,7 +546,9 @@ header marquee {
 @media (min-width: 769px) {
     header marquee {
         display: block !important;
-        margin-top: 0px !important; /* Adjust this number to nudge it up or down on desktop */
+        margin: 0 !important;          /* Resets all default browser margins */
+        margin-top: -15px !important;  /* Negative margin pulls it up higher! */
+        padding: 10px !important;      /* Keeps the inside spacing neat */
     }
 }
 
