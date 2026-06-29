@@ -106,11 +106,6 @@ nav ul li a.active {
 /* ===================== */
 
 marquee {
-    position: fixed;
-    top: 60px; /* same as your nav height */
-    left: 0;
-    width: 100%;
-    z-index: 999;
     background: #2563EB;
     color: white;
     padding: 10px;
@@ -1095,6 +1090,3 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    padding-top: 110px; /* nav (60px) + marquee (~50px) */
-}
